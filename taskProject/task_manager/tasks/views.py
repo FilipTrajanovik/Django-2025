@@ -16,7 +16,8 @@ def task_list(request):
     else:
         task = Task.objects.filter(assigned_to=request.user)
 
-    return render(request, 'tasks/task_list.html', {'tasks', tasks})
+    return render(request, 'tasks/task_list.html', {'tasks': task})
+
 
 @login_required
 def task_create(request):
